@@ -1,3 +1,7 @@
 .idea/*
 *.iml
 target/*
+mem.log
+mem.lck
+mem.properties
+mem.script
