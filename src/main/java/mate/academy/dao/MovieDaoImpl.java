@@ -1,8 +1,6 @@
 package mate.academy.dao;
 
 import java.util.Optional;
-
-import mate.academy.dao.MovieDao;
 import mate.academy.lib.Dao;
 import mate.academy.model.Movie;
 import mate.academy.service.DataProcessingException;
@@ -27,7 +25,7 @@ public class MovieDaoImpl implements MovieDao {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new RuntimeException("Can't save product to DB: " + movie, e);
+            throw new DataProcessingException("Can't save product to DB: " + movie, e);
         } finally {
             if (session != null) {
                 session.close();
